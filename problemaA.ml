@@ -12,7 +12,7 @@
 
 (*
 
-  É defino uma variável "n" que usa a função read_int() para ler um número inteiro fornecido pelo usuário.
+  É defina uma variável "n" que usa a função read_int() para ler um número inteiro fornecido pelo usuário.
 
 *)
 let n = read_int ()
@@ -20,7 +20,7 @@ let n = read_int ()
 
 (*
    
-  Função cria um array chamado "v" com 10001 elementos, cada um inicializado com o valor inteiro zero.
+  A função cria um array chamado "v" com 10001 elementos, cada um inicializado com o valor inteiro zero.
 
 *)
 
@@ -29,14 +29,13 @@ let v = Array.make 10001 (Z.of_int 0)
 (*
    
   É defina uma variável "num" que armazenará o valor final da sequência de Motzkin calculada para o número fornecido pelo usuário.
-  Na linha 39 temos uma condicional que verifica se o número fornecido está dentro do intervalo válido de 0 a 10000, se não estiveres é devolvido o número 0.
-  Na linha 40 é defina uma função recursiva chamada "motz" que calcula a sequência de Motzkin.
-  Na linha 42 temos uma condicional que verifica se o número já foi calculado antes e armazenado no array "v". 
+  Na linha 42 temos uma condição que verifica se o número fornecido está dentro do intervalo válido de 0 a 10000, se não estiver é devolvido o número 0.
+  Na linha 43 é defina uma função recursiva chamada "motz" que calcula a sequência de Motzkin.
+  Na linha 44 há uma verificação, se n < 2, o output é igual a 1 senão é calculado o número de Motzkin do valor introduzido pelo usuário.
+  Na linha 46 temos uma condição que verifica se o número já foi calculado antes e armazenado no array "v". 
   Se já foi calculado, o valor armazenado no array é retornado imediatamente, evitando a necessidade de calcular novamente.
-  Na linha 45 é armazeno o valor calculado no array "v" para uso posterior.
+  Na linha 55 é armazenado o valor calculado no array "v" para uso posterior.
   
-
-
 *)
 
 let num =
@@ -66,4 +65,18 @@ let num =
   Função para imprimir o valor final da sequência de Motzkin calculado.
 
 *)
+
 let () = print_endline (Z.to_string num)
+
+
+(*
+   
+    Fontes:
+
+    https://dsheets.github.io/codoc/zarith.1.3/z/
+    https://docs.ocaml.pro/docs/LIBRARY.zarith@zarith.1.11/Z/index.html
+    http://www.decom.ufop.br/romildo/2015-1/bcc222/slides/progfunc.pdf
+    https://cs3110.github.io/textbook/cover.html
+    https://mathworld.wolfram.com/MotzkinNumber.html
+
+*)
